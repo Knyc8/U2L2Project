@@ -36,10 +36,10 @@ public class U2L2Runner {
         System.out.println("What is the tax rate for your area? (In decimal form)");
         double taxRate = s.nextDouble();
 
-        ConstructionPricer costs = new ConstructionPricer(lumber, window, taxRate);
+        ConstructionPricer price = new ConstructionPricer(11.50, 25.75, taxRate);
 
         System.out.println();
-        System.out.printf("Total Materials Cost: $%.2f\n", costs.calculateTotalCost());
-        System.out.printf("Grand Total after Tax: $%.2f\n", costs.calculateTotalCostTaxed());
+        System.out.printf("Total Materials Cost: $%.2f\n", price.materialsCost(lumber, window));
+        System.out.printf("Grand Total after Tax: $%.2f\n", price.totalWithTax(price.materialsCost(lumber, window)));
     }
 }
